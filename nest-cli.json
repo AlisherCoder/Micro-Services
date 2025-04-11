@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/Micro-Services/src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/Micro-Services/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/Micro-Services",
+  "projects": {
+    "Micro-Services": {
+      "type": "application",
+      "root": "apps/Micro-Services",
+      "entryFile": "main",
+      "sourceRoot": "apps/Micro-Services/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/Micro-Services/tsconfig.app.json"
+      }
+    },
+    "comment-services": {
+      "type": "application",
+      "root": "apps/comment-services",
+      "entryFile": "main",
+      "sourceRoot": "apps/comment-services/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/comment-services/tsconfig.app.json"
+      }
+    },
+    "shared-dto": {
+      "type": "library",
+      "root": "libs/shared-dto",
+      "entryFile": "index",
+      "sourceRoot": "libs/shared-dto/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/shared-dto/tsconfig.lib.json"
+      }
+    },
+    "user-services": {
+      "type": "application",
+      "root": "apps/user-services",
+      "entryFile": "main",
+      "sourceRoot": "apps/user-services/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/user-services/tsconfig.app.json"
+      }
+    }
+  }
+}
